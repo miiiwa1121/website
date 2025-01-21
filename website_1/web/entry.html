@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東京都新宿区のプログラミングスクール「プログラミング学習塾 SKILSET」の体験授業お申し込みページです。ご質問やご要望などのご連絡もこちらのメールフォームからお送りください。">
+    <title>体験授業お申し込み｜プログラミング学習塾 SKILSET</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="entry">
+
+<header>
+    <h1><a href="index.html"><img src="images/logo.png" alt="プログラミング学習塾 SKILSET"></a></h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="course.html">コース紹介</a></li>
+            <li><a href="price.html">受講料金</a></li>
+            <li><a href="access.html">アクセス</a></li>
+            <li><a href="entry.html">体験授業お申し込み</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="title">
+        <h1>体験授業お申し込み</h1>
+        <ol>
+            <li><a href="index.html">ホーム</a></li>
+            <li>体験授業お申し込み</li>
+        </ol>
+    </div>
+    <div class="inner">
+        <p><span class="must">※</span>は必ず入力が必要な項目です。</p>
+        <form action="program.php" method="post">
+            <dl>
+                <dt>ご希望のコース</dt>
+                <dd>
+                    <select name="course">
+                        <option disabled selected>選択してください</option>
+                        <option value="ロボットプログラミングコース">ロボットプログラミングコース</option>
+                        <option value="Scratchプログラミングコース">Scratchプログラミングコース</option>
+                    </select>
+                </dd>
+                <dt>ご希望の日時</dt>
+                <dd>
+                    <input type="date" name="date">
+                </dd>
+                <dt>お子様のお名前<span class="must">※</span></dt>
+                <dd>
+                    <input type="text" name="name1" required placeholder="田中 太郎">
+                </dd>
+                <dt>ふりがな<span class="must">※</span></dt>
+                <dd>
+                    <input type="text" name="kana1" required placeholder="たなか たろう">
+                </dd>
+                <dt>学年</dt>
+                <dd>
+                    <select name="grade">
+                        <option disabled selected>選択してください</option>
+                        <option value="未就学児">未就学児</option>
+                        <option value="小学1年">小学1年</option>
+                        <option value="小学2年">小学2年</option>
+                        <option value="小学3年">小学3年</option>
+                        <option value="小学4年">小学4年</option>
+                        <option value="小学5年">小学5年</option>
+                        <option value="小学6年">小学6年</option>
+                        <option value="中学1年">中学1年</option>
+                        <option value="中学2年">中学2年</option>
+                        <option value="中学3年">中学3年</option>
+                    </select>
+                </dd>
+                <dt>保護者のお名前<span class="must">※</span></dt>
+                <dd>
+                    <input type="text" name="name2" required placeholder="田中 花子">
+                </dd>
+                <dt>ふりがな<span class="must">※</span></dt>
+                <dd>
+                    <input type="text" name="kana2" required placeholder="たなか はなこ">
+                </dd>
+                <dt>メールアドレス<span class="must">※</span></dt>
+                <dd>
+                    <input type="email" name="email" required placeholder="sample@test.com">
+                </dd>
+                <dt>コメント・備考など</dt>
+                <dd>
+                    <textarea name="comment" cols="20" rows="5"></textarea>
+                </dd>
+            </dl>
+            <p class="submit"><input type="submit" name="submit" value="送信する"></p>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <ul>
+        <li><a href="sitemap.html">サイトマップ</a></li>
+        <li><a href="privacypolicy.html">プライバシーポリシー</a></li>
+    </ul>
+    <p><small>&copy; 2022 プログラミング学習塾 SKILSET.</small></p>
+</footer>
+
+</body>
+</html>
