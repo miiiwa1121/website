@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社三輪</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; */
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .hero {
+            background-image: url('/api/placeholder/800/400');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                height: 40vh;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 0.5rem;
+            }
+        }
+        
+        .apply-button,
+        .shop-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .shop-button {
+            background-color: #008CBA;
+        }
+
+        .invisible-login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* 新しく追加したスタイル */
+        #moving-button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.1s ease-out;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>株式会社三輪</h1>
+        <form action="user/login.php" method="get">
+            <button type="submit" class="invisible-login-button"></button>
+        </form>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#products">商品情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="contact/contact.php">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h2>愛とLoveのものづくり</h2>
+            <p>株式会社三輪は、Long timeの愛とLoveを活かし、Customerの圧倒的ニーズに応えるproductをプロバイドしています。</p>
+        </div>
+    </div>
+    <main>
+        <section id="about">
+            <h2>会社概要</h2>
+            <p>株式会社三輪は、ちょい昔の創業以来、高品質な愛とLoveなソリューションを提供し続けてきました。私たちは、お客様の期待を超える商品を育てることを誓います。</p>
+        </section>
+        <section id="products">
+            <h2>商品情報</h2>
+            <ul>
+                <li>加工品</li>
+                <li>冷凍品</li>
+                <li>生生野菜</li>
+            </ul>
+            <a href="shop/shop.php">
+                <button class="shop-button">Shopへ</button>
+            </a>
+        </section>
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>ご質問やお問い合わせは、以下の連絡先までお気軽にご連絡ください。</p>
+            <p>電話: 080-8350-1924</p>
+            <p>メール: k023c0026@g.neec.ac.jp</p>
+            <p>住所: 1600 Amphitheatre Pkwy, Mountain View, CA 94043 アメリカ合衆国</p>
+        </section>
+        <section id="recruitment">
+            <h2>求人情報</h2>
+            <p>株式会社三輪では、優秀な人材を募集しています。</p>
+            <a href="recruit/work_detail.php">
+                <button class="apply-button">求人詳細</button>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 株式会社三輪 All Rights Reserved.</p>
+    </footer>
+
+    <!-- 動くボタンを追加 -->
+    <a href="memory_card/memory_game.php" id="moving-button"></a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const movingButton = document.getElementById('moving-button');
+            const images = [
+                'daikon.png',
+                'hakusai.png',
+                'hati.png',
+                'hourensou.png',
+                'jagaimo.png',
+                'kome.png',
+                'kyuri.png',
+                'nasubi.png',
+                'ninjin.png'
+            ];
+
+            // ボタンの初期位置をランダムに設定
+            let x = Math.random() * (window.innerWidth - 50);
+            let y = Math.random() * (window.innerHeight - 50);
+            
+            // ボタンの移動速度と方向をランダムに設定
+            let dx = (Math.random() - 0.5) * 5;
+            let dy = (Math.random() - 0.5) * 5;
+
+            // ボタンのアニメーション関数
+            function animate() {
+                // ボタンの位置を更新
+                x += dx;
+                y += dy;
+
+                // 画面の端に到達したら反射
+                if (x < 0 || x > window.innerWidth - 50) {
+                    dx = -dx;
+                    x = Math.max(0, Math.min(x, window.innerWidth - 50));
+                }
+                if (y < 0 || y > window.innerHeight - 50) {
+                    dy = -dy;
+                    y = Math.max(0, Math.min(y, window.innerHeight - 50));
+                }
+
+                // ボタンの位置を設定
+                movingButton.style.left = `${x}px`;
+                movingButton.style.top = `${y}px`;
+
+                // ボタンの進行方向に合わせて回転
+                const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+                movingButton.style.transform = `rotate(${angle}deg)`;
+
+                // 次のアニメーションフレームをリクエスト
+                requestAnimationFrame(animate);
+            }
+
+            // アニメーションを開始
+            animate();
+
+            // ボタンの出現と消失を制御する関数
+            function spawnButton() {
+                // ボタンの新しい位置をランダムに設定
+                x = Math.random() * (window.innerWidth - 50);
+                y = Math.random() * (window.innerHeight - 50);
+                
+                // 新しい移動速度と方向をランダムに設定
+                dx = (Math.random() - 0.5) * 5;
+                dy = (Math.random() - 0.5) * 5;
+
+                // ボタンにランダムな画像を設定
+                const randomImage = images[Math.floor(Math.random() * images.length)];
+                movingButton.style.backgroundImage = `url('images/${randomImage}')`;
+
+                // ボタンを表示
+                movingButton.style.display = 'block';
+                
+                // 一定時間後にボタンを非表示にし、再出現のタイマーをセット
+                setTimeout(() => {
+                    movingButton.style.display = 'none';
+                    // 10〜30秒後に再度ボタンを出現させる
+                    setTimeout(spawnButton, Math.random() * 20000 + 10000);
+                }, Math.random() * 20000 + 15000); // 15-35秒間表示
+            }
+
+            // ボタンの出現と消失のサイクルを開始
+            spawnButton();
+        });
+    </script>
+</body>
+</html>
